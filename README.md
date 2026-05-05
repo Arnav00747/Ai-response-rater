@@ -6,7 +6,7 @@ Users compare two AI-generated responses, select the better one, rate it, and pr
 ---
 
 ## 🌐 Live Demo
-👉 (Add your deployed link here after deployment)
+👉https://ai-response-rater.onrender.com/
 
 ---
 
