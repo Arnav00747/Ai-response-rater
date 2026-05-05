@@ -1,0 +1,15 @@
+{
+  "name": "ai-response-rater",
+  "version": "1.0.0",
+  "description": "AI Response Rater - RLHF Tool",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^4.22.1",
+    "node-fetch": "^2.7.0"
+  }
+}

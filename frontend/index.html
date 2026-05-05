@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Response Rater - RLHF Tool</title>
+    <meta name="description" content="Simulate Reinforcement Learning from Human Feedback by comparing AI responses.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>AI Response Rater</h1>
+            <p>Reinforcement Learning from Human Feedback Simulator</p>
+        </header>
+
+        <main>
+            <!-- Input Section -->
+            <section class="card input-section">
+                <h2>Enter Prompt</h2>
+                <textarea id="prompt-input" placeholder="Type a question or prompt here..."></textarea>
+                <button id="generate-btn" class="primary-btn">Generate Responses</button>
+            </section>
+
+            <!-- Comparison Section (Hidden initially) -->
+            <section id="comparison-section" class="comparison-section hidden">
+                <div class="responses-container">
+                    <div class="response-card" id="card-a" data-choice="A">
+                        <div class="card-header">Response A</div>
+                        <div class="card-body" id="response-a-content"></div>
+                        <button class="select-btn">Select A</button>
+                    </div>
+                    <div class="response-card" id="card-b" data-choice="B">
+                        <div class="card-header">Response B</div>
+                        <div class="card-body" id="response-b-content"></div>
+                        <button class="select-btn">Select B</button>
+                    </div>
+                </div>
+
+                <!-- Feedback Section -->
+                <div class="feedback-section card">
+                    <h3>Provide Feedback</h3>
+                    <p>Selected: <span id="selected-label">None</span></p>
+                    
+                    <div class="rating-group">
+                        <label>Rating:</label>
+                        <div class="stars" id="star-rating">
+                            <span data-value="1">★</span>
+                            <span data-value="2">★</span>
+                            <span data-value="3">★</span>
+                            <span data-value="4">★</span>
+                            <span data-value="5">★</span>
+                        </div>
+                    </div>
+
+                    <textarea id="feedback-input" placeholder="Optional feedback on why you chose this response..."></textarea>
+                    
+                    <button id="submit-btn" class="success-btn" disabled>Submit Rating</button>
+                </div>
+            </section>
+
+            <!-- Dashboard Section -->
+            <section class="card dashboard-section">
+                <div class="dashboard-header">
+                    <h2>Past Submissions</h2>
+                    <button id="export-btn" class="secondary-btn">Export Data (JSON)</button>
+                </div>
+                <div class="table-container">
+                    <table id="submissions-table">
+                        <thead>
+                            <tr>
+                                <th>Prompt</th>
+                                <th>Choice</th>
+                                <th>Rating</th>
+                                <th>Feedback</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <!-- Rows injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
